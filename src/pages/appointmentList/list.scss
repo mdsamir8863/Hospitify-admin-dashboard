@@ -1,0 +1,25 @@
+.main-container {
+  display: flex;
+  width: 100%;
+  align-items: start;
+}
+
+.sideBar {
+  width: 16.58%;
+}
+
+.datatable {
+  width: 95%;
+}
+
+.datatableTitle {
+  font-size: 24px;
+  color: gray;
+  margin-top: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.datagrid {
+  height: 500px;
+  margin-top: 20px;
+}

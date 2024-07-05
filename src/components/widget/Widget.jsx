@@ -2,7 +2,8 @@ import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import EventNoteOutlinedIcon from "@mui/icons-material/EventNoteOutlined";
+
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import { Link } from "react-router-dom";
 
@@ -36,7 +37,7 @@ const Widget = ({ type }) => {
         isMoney: false,
         link: "View all Appointments",
         icon: (
-          <ShoppingCartOutlinedIcon
+          <EventNoteOutlinedIcon
             className="icon"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
@@ -87,7 +88,7 @@ const Widget = ({ type }) => {
           {data.isMoney && "$"} {amount}
         </span>
         <Link
-          to="/doctors"
+          to={data.title === "Appointments" ? "/appointments" : "/doctors"}
           className="link"
           style={{
             textDecoration: "none",

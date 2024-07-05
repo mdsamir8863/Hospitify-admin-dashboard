@@ -15,11 +15,11 @@ const Home = () => {
         <div className="widgets">
           <Widget type="user" />
           <Widget type="order" />
-          <Widget type="earning" />
-          <Widget type="balance" />
+          {/* <Widget type="earning" /> */}
+          {/* <Widget type="balance" /> */}
         </div>
         <div className="charts">
-          <Featured />
+          {/* <Featured /> */}
           <Chart title="Last 6 Months (Appointments)" aspect={2 / 1} />
         </div>
         <div className="listContainer">

@@ -1,11 +1,12 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../datatablesource";
+// import { appointmentColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { appointmentRows,appointmentColumns } from "./Appointments";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState(appointmentRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -34,7 +35,7 @@ const Datatable = () => {
     },
   ];
   return (
-    <div style={{ width: "95%" }} className="datatable">
+    <div className="datatable">
       <div className="datatableTitle">
         Our Top Best Doctor
         <Link to="/doctors/new" className="link">
@@ -44,7 +45,7 @@ const Datatable = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={appointmentColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection

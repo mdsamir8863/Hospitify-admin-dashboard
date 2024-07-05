@@ -1,0 +1,85 @@
+.appointments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.appointmentsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.appointmentsTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.link {
+  text-decoration: none;
+  color: blue;
+}
+
+.datagrid {
+  width: 100%;
+  height: 400px;
+}
+
+.cellWithImg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cellImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cellWithStatus {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  &.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  &.passive {
+    background-color: #f44336;
+    color: white;
+  }
+  &.pending {
+    background-color: #ff9800;
+    color: white;
+  }
+}
+
+.cellAction {
+  display: flex;
+  gap: 10px;
+}
+
+.viewButton {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}

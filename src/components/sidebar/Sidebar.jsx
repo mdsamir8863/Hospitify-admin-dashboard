@@ -14,9 +14,17 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { useState } from "react";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handlePopup = () => {
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 2000);
+  };
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -41,48 +49,41 @@ const Sidebar = () => {
               <span>Doctors</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+          <Link to="/appointments" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Appointments</span>
             </li>
           </Link>
-          {/* <li>
-            <CreditCardIcon className="icon" />
-            <span>Appointments</span>
-          </li> */}
-          {/* <li>
-            <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li> */}
+         
           <p className="title">USEFUL</p>
-          <li>
-            <InsertChartIcon className="icon" />
+          <li onClick={handlePopup}>
+            <InsertChartIcon className="icon" onClick={handlePopup} />
             <span>Stats</span>
           </li>
-          <li>
-            <NotificationsNoneIcon className="icon" />
+          <li onClick={handlePopup}>
+            <NotificationsNoneIcon className="icon" onClick={handlePopup} />
             <span>Notifications</span>
           </li>
           <p className="title">SERVICE</p>
-          <li>
+          <li onClick={handlePopup}>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
             <span>System Health</span>
           </li>
-          <li>
+          <li onClick={handlePopup}>
             <PsychologyOutlinedIcon className="icon" />
             <span>Logs</span>
           </li>
-          <li>
+          <li onClick={handlePopup}>
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
           <p className="title">USER</p>
-          <li>
+          <li onClick={handlePopup}>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={handlePopup}>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
@@ -98,6 +99,11 @@ const Sidebar = () => {
           onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>
+      {showPopup && (
+        <div className="popup">
+          <span>Coming Soon...</span>
+        </div>
+      )}
     </div>
   );
 };
